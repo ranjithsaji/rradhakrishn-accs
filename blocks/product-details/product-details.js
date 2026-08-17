@@ -147,7 +147,7 @@ export default async function decorate(block) {
 
   block.replaceChildren(fragment);
   if ($tagline) {
-  $tagline.textContent = 'Free shipping on orders over $11';
+  $tagline.textContent = 'Free shipping on orders over $50';
   }
 
   events.on('pdp/data', (product) => {
