@@ -107,6 +107,7 @@ export default async function decorate(block) {
       </div>
       <div class="product-details__right-column">
         <div class="product-details__header"></div>
+        <div class="product-details__tagline pdp-tagline" aria-label="Promotional offer"></div>
         <div class="product-details__price"></div>
         <div class="product-details__gallery"></div>
         <div class="product-details__short-description"></div>
@@ -138,8 +139,12 @@ export default async function decorate(block) {
   const $wishlistToggleBtn = fragment.querySelector('.product-details__buttons__add-to-wishlist');
   const $description = fragment.querySelector('.product-details__description');
   const $attributes = fragment.querySelector('.product-details__attributes');
+  const $tagline = fragment.querySelector('.product-details__tagline');
 
   block.replaceChildren(fragment);
+  if ($tagline) {
+$tagline.textContent = 'Free shipping on orders over $11';
+}
 
   const gallerySlots = {
     CarouselThumbnail: (ctx) => {
